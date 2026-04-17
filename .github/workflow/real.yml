@@ -12,8 +12,8 @@ jobs:
 
       - name: get pem file
         run: |
-          echo "${{secrets.secret_key}}" > Cloudchasers-7key.pem
-          chmod 400 Cloudchasers-7key.pem
+          echo "${{secrets.secret_key}}" > shri-7key.pem
+          chmod 400 shri-7key.pem
           ls -lrsth
       - name: cp app.py
         run: scp -o StrictHostKeyChecking=no -i shri-7.pem app.py ec2-user@13.232.188.239:/home/ec2-user/
