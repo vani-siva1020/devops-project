@@ -23,9 +23,9 @@ jobs:
 
       - name: Deploy Docker
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@<your-ip> "
+          ssh -o StrictHostKeyChecking=no -i shri-6.key.pem ec2-user@54.87.139.42 "
           sudo docker stop quote-app || true &&
           sudo docker rm quote-app || true &&
           sudo docker build -t quote-app /home/ec2-user &&
-          sudo docker run -d -p 5010:5000 --name quote-app quote-app
+          sudo docker run -d -p 5002:5002 --name quote-app quote-app
           "
