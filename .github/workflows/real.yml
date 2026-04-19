@@ -12,8 +12,8 @@ jobs:
 
       - name: Create PEM
         run: |
-          echo "${{ secrets.Vani }}" > key.pem
-          chmod 400 key.pem
+          echo "${{ secrets.Vani }}" > shri-6.key.pem
+          chmod 400 shri-6.key.pem
 
       - name: Copy files
         run: |
