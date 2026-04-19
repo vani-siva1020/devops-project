@@ -17,13 +17,13 @@ jobs:
 
       - name: Copy files
         run: |
-          scp -o StrictHostKeyChecking=no -i shri-6.key.pem app.py ec2-user@54.87.139.42:/home/ec2-user/
-          scp -o StrictHostKeyChecking=no -i shri-6.key.pem requirements.txt ec2-user@54.87.139.42:/home/ec2-user/
-          scp -o StrictHostKeyChecking=no -i shri-6.key.pem Dockerfile ec2-user@54.87.139.42:/home/ec2-user/
+          scp -o StrictHostKeyChecking=no -i shri-6.key.pem app.py ec2-user@100.48.81.70:/home/ec2-user/
+          scp -o StrictHostKeyChecking=no -i shri-6.key.pem requirements.txt ec2-user@100.48.81.70:/home/ec2-user/
+          scp -o StrictHostKeyChecking=no -i shri-6.key.pem Dockerfile ec2-user@100.48.81.70:/home/ec2-user/
 
       - name: Deploy Docker
         run: |
-          ssh -o StrictHostKeyChecking=no -i shri-6.key.pem ec2-user@54.87.139.42 "
+          ssh -o StrictHostKeyChecking=no -i shri-6.key.pem ec2-user@100.48.81.70 "
           sudo docker stop quote-app || true &&
           sudo docker rm quote-app || true &&
           sudo docker build -t quote-app /home/ec2-user &&
